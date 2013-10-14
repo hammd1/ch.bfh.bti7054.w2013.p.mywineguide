@@ -1,0 +1,21 @@
+FetureList myWineGuide:
+
+Muss:
+-User anmelden /verwalten
+-Weinkeller/Wein erfassen
+-Wein beurteilen
+-Wein zu Essen - Suche (frei / nur myWineDB)
+-Essen zu Wein -Suche	(frei)
+
+
+
+Soll:
+-Wein zu Essen - Bewertung erfassen
+-Werbung anzeigen
+-Ein -/ Auschecken von Wein in myWineDB
+
+
+Kann:
+-Wein bestellen (Bestellvorgang)
+-Essen zu Wein -Suche	(nur myFoodDB)
+-Erinnerung (Lagerfähigkeit vom Wein läuft ab)

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project basedir="." name="MyWineGuide Copy">	
+	<target name="copyToHtdocs">		
+		<copy todir="C:\xampp\htdocs\mywineguide">	
+		       <fileset dir="C:\develop\git\ch.bfh.bti7054.w2013.p.mywineguide\MyWineGuide"/> 		       	
+		 </copy>
+	</target>
+</project>

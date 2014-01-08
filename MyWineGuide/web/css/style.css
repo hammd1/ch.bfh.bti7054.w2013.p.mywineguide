@@ -1,0 +1,400 @@
+/* ===========================
+   ======= Body style ======== 
+   =========================== */
+   
+body {
+	background-image: url('img/bg.png');
+	color: #000305;
+	font-size: 87.5%; /* Base font size: 14px */
+	font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	line-height: 1.429;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	}
+	
+.body {
+	clear: both; 
+	margin: 0 auto; 
+	width: 70%;
+}
+	
+/* ===========================
+   ========= Headings ======== 
+   =========================== */
+h2 {font-size: 1.571em}	/* 22px */
+h3 {font-size: 1.429em}	/* 20px */
+h4 {font-size: 1.286em}	/* 18px */
+h5 {font-size: 1.143em}	/* 16px */
+h6 {font-size: 1em}		/* 14px */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}
+
+/* ===========================
+   ======= Anchor style ====== 
+   =========================== */
+a {
+	outline: 0;
+	}
+
+a img {
+	border: 0px; 
+	text-decoration: none;
+}
+
+a:link, a:visited {
+	color: #880f0f;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	background-color: #880f0f;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* ===========================
+   =====    Main Header  ===== 
+   =========================== */
+.mainHeader{
+	
+	background: #666;
+	font-size: 1em;
+	height: 200px;
+	line-height: 10px;
+	margin: 0 auto 15px auto;
+
+}
+.mainHeader img {
+	padding: 0.5%;
+	height: 95%;
+	width: auto;
+	float: left;
+}
+.mainHeader nav {
+	float: right;
+	padding: 1%;
+	padding-top: 15px;
+}
+	
+.mainHeader nav ul {
+	list-style: none; 
+	margin: 0 auto;
+	
+	
+}
+
+.mainHeader nav ul li {
+	display: inline; 
+
+}
+	
+.mainHeader nav a:link, .mainHeader nav a:visited {
+	color: #fff;
+	height: 15px;
+	padding: 5px 20px;
+	text-decoration: none;
+}
+.mainHeader nav a:hover, .mainHeader nav a:active,
+.mainHeader .active a:link, .mainHeader .active a:visited {
+	background: #880f0f;
+	color: #fff;
+	height: 15px;
+	padding: 5px 20px;
+	text-shadow: none !important;
+}
+
+.mainHeader h1{
+	margin: 0;
+	padding-top: 5%;
+	padding-left: 20%;
+	padding-right: 5%;
+	font-size: 600%; 
+	font-family: 'Vivaldi';
+	font-style: italic; 
+	background-color: #bb0605;
+	margin-bottom: 5px;
+	
+}
+
+
+/* ===========================
+   ===== Top Navigation ===== 
+   =========================== */
+   
+.topNavigation {
+	background: #666;
+	font-size: 1.143em;
+	height: 40px;
+	line-height: 30px;
+	margin: 0 auto 30px auto;
+	text-align: center;
+}
+	
+.topNavigation ul {
+	list-style: none; 
+	margin: 0 auto;
+}
+
+.topNavigation ul li {
+	float: left; 
+	display: inline; 
+}
+	
+.topNavigation a:link, .topNavigation a:visited {
+	color: #fff;
+	display: inline-block;
+	height: 30px;
+	padding: 5px 23px;
+	text-decoration: none;
+}
+.topNavigation a:hover, .topNavigation a:active,
+.topNavigation .active a:link, .topNavigation .active a:visited {
+	background: #880f0f;
+	color: #fff;
+	text-shadow: none !important;
+}
+
+/* ===========================
+   ====Content Navigation ==== 
+   =========================== */
+.navigationContent{
+	margin: 0 auto 30px auto;
+	text-align: center;
+		
+}
+
+.navigationContent nav ul {	
+	list-style: none; 
+	margin: 0, auto;
+}
+
+.navigationContent nav ul li {
+	float: left; 
+	display: inline; 
+	width: 33%;
+	height: auto;
+	
+}
+.navigationContent img{
+	width: 90%;
+	height: auto;
+	
+}
+.navigationContent footer {
+	font-style: italic;
+	color: #999;
+	font-size: 85%;
+}
+.navigationContent content{
+		
+	margin-top: 10px;
+	
+}
+
+/* ===========================
+   ======== Sidebar ========== 
+   =========================== */
+
+.top-sidebar {
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	padding: 2% 3%;
+	margin-bottom: 2%;
+}
+
+.middle-sidebar {
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	background-color: #FFF;	
+	padding: 2% 3%;
+	margin-bottom: 2%;
+}
+
+.bottom-sidebar {
+	width: 24%;
+	float: left;
+	margin-left: 2%;
+	background-color: #FFF;	
+	padding: 2% 3%;
+}
+
+/* ===========================
+   ========= Footer ========== 
+   =========================== */
+
+.mainFooter {
+	width: 100%;
+	float: left;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	padding-left: 0;
+	background-color: #666;
+	color: #FFF;	
+}
+
+.mainFooter p {
+	width: 91%;
+	margin: 2% auto;
+}
+
+/* ===========================
+   ====== Media Queries ====== 
+   =========================== */
+
+@media only screen and (min-width : 150px) and (max-width : 780px)
+{
+	.body {
+		clear: both; 
+		margin: 0 auto; 
+		width: 90%;
+		font-size: 90%;
+	}
+	
+	.mainHeader nav {
+		background: #666;
+		font-size: 1.143em;
+		height: 160px;
+		line-height: 30px;
+		margin-bottom: 0;
+	}
+		
+	.mainHeader nav ul {
+		list-style: none; 
+		margin: 0 auto;
+		padding-left: 0;
+	}
+	
+	.mainHeader nav li {
+		margin-left: 0 auto;
+		width: 100%;
+	}
+	
+	.mainHeader nav a:link, .mainHeader nav a:visited {
+		color: #FFF;
+		display: block;
+		height: 30px;
+		padding: 5px 0;
+		text-decoration: none;
+	}
+	
+	.mainHeader nav a:active,
+	.mainHeader nav .active a:link, .mainHeader nav .active a:visited {
+		background: #880f0f;
+		color: #fff;
+		text-shadow: none !important;
+	}
+			
+	.mainHeader img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 3%;
+	}
+	
+	.navigationContent{
+	margin: 0 auto 30px auto;
+	text-align: center;
+		
+	}
+
+	.navigationContent nav ul {	
+		list-style: none; 
+		margin: 0, auto;
+	}
+	
+	.navigationContent nav ul li {
+		margin-left: 0, auto;		
+		width: 100%;
+		height: auto;
+		
+	}
+	
+	.mainContent {
+		overflow: hidden;
+		line-height: 25px;
+		margin-top: 4%;
+		margin-bottom: 2%;
+	}
+	
+	.topcontent {
+		background-color: #FFF;
+		padding: 2% 5%;
+		margin-bottom: 4%;
+	}
+	
+	.bottomcontent {
+		background-color: #FFF;	
+		padding: 2% 5%;
+	}
+	
+	.content {
+		width: 100%;
+		float: left;
+	}	
+
+	.post-info {
+		display: none;
+	}
+	
+	.top-sidebar {
+		width: 86%;
+		float: left;
+		background-color: #FFF;	
+		margin-top: 4%;
+		margin-left: 0;
+		padding: 0 7%;
+		margin-bottom: 0;		
+	}
+	
+	.top-sidebar p {
+		width: 90%;
+	}
+
+	.middle-sidebar {
+		width: 86%;
+		float: left;
+		background-color: #FFF;	
+		margin-top: 4%;
+		margin-left: 0;
+		padding: 0 7%;
+		margin-bottom: 0;	
+	}
+	
+	.middle-sidebar p {
+		width: 90%;
+	}
+	
+	.bottom-sidebar {
+		width: 86%;
+		float: left;
+		background-color: #FFF;	
+		margin-top: 4%;
+		margin-left: 0%;
+		padding: 0 7%;
+		margin-bottom: 1%;
+	}
+	
+	.bottom-sidebar p {
+		width: 90%;
+	}
+		
+	.mainFooter {
+		width: 100%;
+		float: left;
+		margin: 2% 0;
+		padding-left: 0;
+		background-color: #666;
+		color: #FFF;	
+	}
+	
+	.mainFooter p {
+		width: 86%;
+		margin: 2% auto;
+	}
+}

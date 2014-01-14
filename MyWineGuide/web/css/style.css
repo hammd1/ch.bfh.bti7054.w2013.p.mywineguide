@@ -90,7 +90,7 @@ a:hover, a:active {
 
 .mainHeader nav ul li {
 	display: inline; 
-
+	color: #fff;
 }
 	
 .mainHeader nav a:link, .mainHeader nav a:visited {

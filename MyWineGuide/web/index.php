@@ -1,14 +1,12 @@
+<?php include 'includes/initialize.php'?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<title>My Wine Guide</title>	
 	<meta charset="utf-8" />	
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
 </head>
-
 <body class="body">
 	<?php include 'includes/mainHeader.php';?>		
 	<div class="mainContent">
@@ -58,3 +56,5 @@
 	<?php include 'includes/footer.php';?>
 </body>
 </html>
+
+

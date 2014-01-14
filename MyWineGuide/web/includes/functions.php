@@ -1,5 +1,6 @@
 <?php
 include_once 'psl-config.php';
+
 function sec_session_start() {
 	$session_name = 'sec_session_id'; // Set a custom session name
 	$secure = SECURE;
@@ -186,4 +187,11 @@ function echoActiveSiteNavigation($requestUri)
 	if ($current_file_name == $requestUri)
 		echo 'class="active"';
 }
+
+function getCurrentPageURL() {
+// 	return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+	return "index.php";
+}
+
+
 ?>

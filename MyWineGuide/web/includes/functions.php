@@ -1,4 +1,14 @@
 <?php
+function initCookies(){
+
+	if( ! isset( $_COOKIE["language"])){
+
+		$bo=setcookie("language", "de", time()+3600, '/', NULL);
+		
+	}
+}
+initCookies();
+
 include_once 'psl-config.php';
 
 function sec_session_start() {
@@ -192,6 +202,5 @@ function getCurrentPageURL() {
 // 	return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 	return "index.php";
 }
-
 
 ?>

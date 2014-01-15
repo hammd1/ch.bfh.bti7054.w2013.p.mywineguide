@@ -1,4 +1,4 @@
-<?php include 'includes/initialize.php'?>
+<?php include 'includes/functions.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +29,7 @@
 					</content>
 				</li>
 				<li>
+				<?php //TODO: change image?>
 					<a href="dishSearch.php"><img src="images/dishSearch.jpg" /></a>
 					<header>
 						<h2><a href="dishSearch.php" title="dish search">Suche nach Gerichten</a></h2>

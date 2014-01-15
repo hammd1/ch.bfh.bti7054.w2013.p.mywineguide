@@ -1,9 +1,14 @@
-<?php include 'includes/functions.php';?>
-<form action="<?php languageSwitch() ?>" method="post">
-	<select name="language">
-		<option value="de" selected=<?php if( $_COOKIE["language"] == "de" ) { echo " selected"; }?>>DE</option>
-		<option value="en" selected=<?php if( $_COOKIE["language"] == "en" ) { echo " selected"; }?>>EN</option>
-	</select> <input type="submit" value="Select Language">
-</form>
 
-<p>Language: <?php if( isset( $_COOKIE["language"] ) ) { echo $_COOKIE["language"]; } else { echo "<em>not set</em>"; } ?></p>
+<?php
+// now we will see our code in action
+require 'includes/wineModel.php';
+require 'includes/wineModelObserver.php';
+$wineList[0]['name'] = 'Don Rudolfo';
+$wineList[0]['country'] = 'italy';
+$wineList[0]['year'] = 2008;
+// Subject got a life
+$wineModel = new wineModel($wineList);
+$observer = new wineModelObserver();
+$wineModel->attachObserver ('changed', $observer);
+$wineModel->wineSearch('country', 'argentina');
+?>

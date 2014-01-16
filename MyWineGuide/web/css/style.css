@@ -2,7 +2,7 @@
    ======= Body style ======== 
    =========================== */
 body {
-	background-image: url('img/bg.png');
+	background-image: url('../images/bg.png');
 	color: #000305;
 	font-size: 87.5%; /* Base font size: 14px */
 	font-family: 'Trebuchet MS', Trebuchet, 'Lucida Sans Unicode',
@@ -17,6 +17,7 @@ body {
 	clear: both;
 	margin: 0 auto;
 	width: 75%;
+	
 }
 
 /* ===========================
@@ -75,6 +76,10 @@ a:hover,a:active {
 	height: 200px;
 	line-height: 10px;
 	margin: 0 auto 15px auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
 }
 
 .mainHeader img {
@@ -118,13 +123,14 @@ a:hover,a:active {
 
 .mainHeader h1 {
 	margin: 0;
-	padding-top: 5%;
+	padding-top: 7%;
 	padding-left: 20%;
 	padding-right: 5%;
-	font-size: 600%;
+	font-size: 650%;
 	font-family: 'Vivaldi';
 	font-style: italic;
-	background-color: #bb0605;
+/* 	background-color: #bb0605; */
+	color: #880f0f;
 	margin-bottom: 5px;
 }
 
@@ -136,8 +142,12 @@ a:hover,a:active {
 	font-size: 1.143em;
 	height: 40px;
 	line-height: 30px;
-	margin: 0 auto 30px auto;
+	margin: 0 auto 15px auto;
 	text-align: center;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
 }
 
 .topNavigation ul {
@@ -177,6 +187,8 @@ a:hover,a:active {
 .navigationContent nav ul {
 	list-style: none;
 	margin: 0, auto;
+	padding: 0; 
+	margin: 0;
 }
 
 .navigationContent nav ul li {
@@ -184,6 +196,7 @@ a:hover,a:active {
 	display: inline;
 	width: 33%;
 	height: auto;
+	
 }
 
 .navigationContent img {
@@ -206,22 +219,31 @@ a:hover,a:active {
    =========================== */
 .mainContent {
 	margin: 0 auto 30px auto;
+	background-color:#F9F3E3;
+	
 }
 
 /* ===========================
    =======Left  Content======= 
    =========================== */
 .leftContent {
-	background-color: #225544;
+	background-color: #CCC;
 	margin-left: 0;
 	padding: 1%;
 	padding-top: 0;
-	width: 20%;
+	width: 19%;
 	float:left;
+/* 	color: #fff; */
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
+	
 }
 
 .searchTerm {
-	background-color: #ffffff;
+	height: 60px;
+/* 	background-color: #ffffff; */
 }
 
 .searchTerm form {
@@ -235,73 +257,124 @@ a:hover,a:active {
 	padding-left: 5px;
 }
 
-.selctionCriteria {
-	background-color: #698198;
+.selectionCriteria {
 	padding-top: 3px;
 }
-
-.selctionCriteria form {
-	text-align: left;
+.selectionCriteria content{
 }
 
-.selctionCriteria button {
+.selectionCriteria form {
+	padding-left: 5%;
+	margin-left: 2%;
+	margin-right: 2%;
+	text-align: left;
+	background-color: #b69999;
+/* 	color: #fff; */
+	
+}
+
+.selectionCriteria button {
 	width: 100%;
 	height: 30px;
 	text-align: left;
 	font-size: 1em;
+	
 }
 
 /* ===========================
    =======Middle  Content======= 
    =========================== */
 .middleContent {
-	background-color: #885522;
+	background-color: #CCC;
 	width: 60%;
 	float: left;
 	padding: 1%;
 	padding-top: 0;
+	margin-left: 1%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
 	
 }
 
 .textSearch {
-	background-color: #111111;
+/* 	background-color: #111111; */
 	margin-bottom: 2%;
 }
 
 .resultList {
-	background-color: #999999;
+/* 	background-color: #999999; */
 	margin-bottom: 2%;
+}
+
+.resultList img{
+	
+	width: 30px;
+	float: left;
+	padding:3px;
+}
+.resultList options img{
+	
+	width: 25px;
+	float: left;
+	padding:3px;
+}
+
+.resultList options{
+	
+	float: right;
+}
+.resultList content{
+	
+	float: none;
+}
+
+.resultList h6{
+	
+	margin: 0;
+	padding: 3px;
+	size: line-height: 1.1;
+	color: #880f0f;
+	
+	
 }
 
 /* ===========================
    =======Right  Content======= 
    =========================== */
 .rightContent {
-	background-color: #123456;
+	background-color: #CCC;
 	margin-left: 0;
 	float: left;
-	width: 14%;
+	width: 13%;
 	padding: 1%;
 	padding-top: 0;
+	margin-left: 1%;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
+	
 }
 
 .top-sidebar {
 	margin-left: 2%;
-	background-color: #684684;
+/* 	background-color: #684684; */
 	padding: 2% 3%;
 	margin-bottom: 2%;
 }
 
 .middle-sidebar {
 	margin-left: 2%;
-	background-color: #123456;
+/* 	background-color: #123456; */
 	padding: 2% 3%;
 	margin-bottom: 2%;
 }
 
 .bottom-sidebar {
 	margin-left: 2%;
-	background-color: #865421;
+/* 	background-color: #865421; */
 	padding: 2% 3%;
 }
 
@@ -316,6 +389,10 @@ a:hover,a:active {
 	padding-left: 0;
 	background-color: #666;
 	color: #FFF;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;	
+	
 	/*position:fixed;
 		padding:5px; bottom:0px;*/
 }
@@ -325,6 +402,13 @@ a:hover,a:active {
 	margin: 2% auto;
 }
 
+
+
+/* highlight results */
+.ui-autocomplete span.hl_results {
+    background-color: #ffff66;
+}
+ 
 /* ===========================
    ====== Media Queries ====== 
    =========================== */

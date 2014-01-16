@@ -1,12 +1,14 @@
+<?php
+include_once 'includes/functions.php';
+include_once 'includes/db_connect.php';
+
+sec_session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <html>
-<?php
-include_once 'includes/db_connect.php';
-include_once 'includes/functions.php';
- 
-sec_session_start();
-?>
+
 <head>
 	<title>My Wine Guide</title>	
 	<meta charset="utf-8" />	

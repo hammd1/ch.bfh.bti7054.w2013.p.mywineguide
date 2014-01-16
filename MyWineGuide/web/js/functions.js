@@ -63,3 +63,15 @@ function searchWineFirstLoad(){
 		searchWine();
 	}
 }
+
+function dishSuggestion(){
+	$('#searchTermValue').keyup(function() {
+		alert( "Handler for .keyup() called." );
+
+//	  var val = $.trim( this.value );
+//	  if(val.length == 3) {
+//	    
+//	    var finalStr = "system"+encodeURIComponent("|^")+"0"+encodeURIComponent("|^")+ val;
+//	  }
+	});
+}

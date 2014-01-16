@@ -15,7 +15,7 @@ $mysqli = new mysqli ( HOST, USER, PASSWORD, 'wineguide' );
 // $selectWineType = json_decode($selectWineType,true);
 
 
-$stmt = "SELECT name, country, region, year FROM wineguide.wine";
+$stmt = "SELECT name, winetype, country, region, description, year, imagepath, rating FROM wineguide.wine";
 
 //create statement
 if (isset($_POST['searchCountry'])) {
@@ -35,26 +35,32 @@ if (isset($_POST['searchCountry'])) {
 // }
 $res = $mysqli->query ($stmt);
 
-echo "<table border='1'>
+echo "
+<thead> 
 <tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Age</th>
-<th>Hometown</th>
-<th>Job</th>
-</tr>";
+<th width=\"50%\">Name</th>
+<th>Weintyp</th>
+<th>Land</th>
+<th>Region</th>
+<th>Jahr</th>
+<th>Rating</th>
+		</tr>
+</thead><tbody>";
 
 for($row_no = 0; $row_no < $res->num_rows; $row_no ++) {
 	$res->data_seek ( $row_no );
 	$row = $res->fetch_assoc ();
 	
 	echo "<tr>";
-	echo "<td>" . $row ['name'] . "</td>";
+	echo "<td><img src=\"images/wine/". $row ['imagepath'] . "\"/><h6>" . $row ['name'] . "</h6><content>" . $row ['description'] . "</content><options><img src=\"images/button_plus.png\"/><img src=\"images/button_minus.png\"/></options></td>";
+	echo "<td>" . $row ['winetype'] . "</td>";
 	echo "<td>" . $row ['country'] . "</td>";
+	echo "<td>" . $row ['region'] . "</td>";
 	echo "<td>" . $row ['year'] . "</td>";
+	echo "<td>" . $row ['rating'] . "</td>";
 	echo "</tr>";
 }
-echo "</table>";
+echo "</tbody>";
 // $return [$row_no] ['name'] = $row ['name'];
 // $return [$row_no] ['country'] = $row ['country'];
 // $return [$row_no] ['year'] = $row ['year'];

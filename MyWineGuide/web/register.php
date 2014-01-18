@@ -10,6 +10,9 @@ include_once 'includes/register.inc.php';
 <meta charset="utf-8" />
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/JavaScript" src="js/sha512.js"></script> 
+        <script type="text/JavaScript" src="js/formshash.js"></script>
+
 </head>
 <body class="body">
 

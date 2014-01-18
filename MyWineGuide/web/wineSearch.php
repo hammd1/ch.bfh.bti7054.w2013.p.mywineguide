@@ -12,10 +12,13 @@ sec_session_start();
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script type="text/javascript" src="code.jquery.com/jquery-1.10.2.js"></script> 
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script type="text/javascript" src="js/jquery/jquery-latest.js"></script> 
 <script type="text/javascript" src="js/jquery/jquery.tablesorter.js"></script> 
+
 <script type="text/javascript" src="js/functions.js"></script> 
+
 </head>
 
 
@@ -34,7 +37,8 @@ sec_session_start();
 				<form>
 					<input id="searchTermValue" type="text" size="19" maxlength="30" onsubmit="searchWine()">
 				</form>
-				<?php //TODO: Keyup function?>
+				<?php //TODO: Wait Popup?>
+				<?php //TODO: Keyup function / tablesort?>
 				
 				<a href="javascript:void(0)" onclick="searchWine()"> <img src="images/magnifier.png" />
 				</a>
@@ -50,23 +54,23 @@ sec_session_start();
 					onclick="showSelectionOption(this.id)">Land</button>
 
 				<form name="selectCountry" style="display: none">
-					<input type="checkbox" name="country" value="argentina"
+					<input type="checkbox" name="country" value="argentinien"
 						onclick="searchWine()">Argentinien<br> <input
-						type="checkbox" name="country" value="french"
+						type="checkbox" name="country" value="frankreich"
 						onclick="searchWine()">Frankreich<br> <input
-						type="checkbox" name="country" value="swiss"
+						type="checkbox" name="country" value="schweiz"
 						onclick="searchWine()">Schweiz<br> <input
-						type="checkbox" name="country" value="italy"
+						type="checkbox" name="country" value="italien"
 						onclick="searchWine()">Italien<br>
 				</form>
 				<button type="button" id="selectWineType"
 					onclick="showSelectionOption(this.id)">Weintyp</button>
 
 				<form name="selectWineType" style="display: none">
-					<input type="checkbox" name="wineType" value="redWine">Rotwein<br>
-					<input type="checkbox" name="wineType" value="whiteWine">Weisswein<br>
-					<input type="checkbox" name="wineType" value="roseWine">Rose<br> <input
-						type="checkbox" name="wineType" value="sparklingWine">Schaumwein<br>
+					<input type="checkbox" name="wineType" value="rotwein" onclick="searchWine()">Rotwein<br>
+					<input type="checkbox" name="wineType" value="weisswein" onclick="searchWine()">Weisswein<br>
+					<input type="checkbox" name="wineType" value="rose" onclick="searchWine()">Rose<br> <input
+						type="checkbox" name="wineType" value="schaumwein" onclick="searchWine()">Schaumwein<br>
 				</form>
 				</content>
 			</div>
@@ -79,14 +83,6 @@ sec_session_start();
 					<h3>Gefundene Weine</h3>
 				</header>
 				<table border = "1" id="resultList" class="tablesorter"></table>
-				<script type="text/javascript">
-
-				$(document).ready(function() 
-					    { 
-					        $("#resultList").tablesorter(); 
-					    } 
-					); 
-			  </script>
 				<script type="text/javascript">searchWineFirstLoad();</script>
 			</div>
 		</div>

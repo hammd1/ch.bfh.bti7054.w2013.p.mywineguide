@@ -67,9 +67,9 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
             	
             	$mysqli = new mysqli ( HOST, USER, PASSWORD, 'wineguide' );
             	
-            	if ($insert_stmt = $mysqli->prepare("INSERT INTO user (user_id) VALUES (?)")) {
+            	if ($insert_stmt = $mysqli->prepare("INSERT INTO user VALUES (?,?)")) {
             		
-            		$insert_stmt->bind_param('i',$userID);
+            		$insert_stmt->bind_param('is',$userID, $username);
             	
            			if (! $insert_stmt->execute()) {
                 

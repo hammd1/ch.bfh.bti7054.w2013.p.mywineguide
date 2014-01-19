@@ -6,7 +6,7 @@ include_once 'constants.php';
 
 class WineDAO implements BaseDAO{
 	
-	public function getAllElements($argument, $values){
+	public function getAllElements($argument, $values, $userID){
 
 		$execResult = array();
 		$execStmt = '';
@@ -81,7 +81,7 @@ class WineDAO implements BaseDAO{
 	public function deleteElementByID($execStmt){}
 	
 	
-	public function insertElement($execStmt){}
+	public function insertElement($userID, $wineID, $numer){}
 	
 	
 }

@@ -1,8 +1,11 @@
 <?php include_once 'includes/functions.php';?>
 
 <?php 
-$language = $_COOKIE["language"];
-
+if(isset($_COOKIE["language"])){
+	$language = $_COOKIE["language"];
+}else{
+	$language ='de';
+}
 
 $menuItem [0] ["de"] = "Wein Suche";
 $menuItem [1] ["de"] = "Suche Gericht";

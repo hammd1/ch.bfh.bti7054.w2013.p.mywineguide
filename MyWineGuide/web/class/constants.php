@@ -11,5 +11,4 @@ final class Constants {
     
 }
 
-?>;
-<!-- define("COUNTRY_SEARCH", "COUNTRY_SEARCH"); -->
+?>

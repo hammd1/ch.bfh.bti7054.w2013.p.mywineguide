@@ -3,8 +3,7 @@ function initCookies(){
 
 	if( ! isset( $_COOKIE["language"])){
 
-		$bo=setcookie("language", "de", time()+3600, '/', NULL);
-		
+		setcookie("language", "de", time()+600, '/', NULL);		
 	}
 }
 initCookies();
@@ -23,6 +22,7 @@ function sec_session_start() {
 	}
 	// Gets current cookies params.
 	$cookieParams = session_get_cookie_params ();
+	$cookieParams ["lifetime"] = '600';
 	session_set_cookie_params ( $cookieParams ["lifetime"], $cookieParams ["path"], $cookieParams ["domain"], $secure, $httponly );
 	// Sets the session name to the one set above.
 	session_name ( $session_name );
@@ -64,7 +64,6 @@ function login($email, $password, $mysqli) {
 					// XSS protection as we might print this value
 					$user_id = preg_replace ( "/[^0-9]+/", "", $user_id );
 					$_SESSION ['user_id'] = $user_id;
-					setcookie("userid", $user_id, time()+3600, '/', NULL);
 					// XSS protection as we might print this value
 					$username = preg_replace ( "/[^a-zA-Z0-9_\-]+/", "", $username );
 					$_SESSION ['username'] = $username;

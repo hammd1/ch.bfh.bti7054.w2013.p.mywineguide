@@ -15,6 +15,12 @@ setcookie(session_name(),
         $params["domain"], 
         $params["secure"], 
         $params["httponly"]);
+
+if(isset($_COOKIE['login'])){
+	unset($_COOKIE['login']);
+	setcookie("login", FALSE, -1, '/', NULL);
+	
+}
  
 // Destroy session 
 session_destroy();

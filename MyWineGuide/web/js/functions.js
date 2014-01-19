@@ -30,27 +30,68 @@ function showSelectionOption(buttonID) {
 }
 function addWine(id){
 	
+	var method = "add";
 	var i2 = "countWine" + id;
 	var i3 = document.getElementById(i2).value;
 
 	$.ajax({
 		type : 'post',
-		url : 'includes/crudMyWine.php',
+		url : 'includes/myWine.php',
 		data : {
-			number:i3, wineID:id
+			method:method, number:i3, wineID:id
 		},
 
 		success : function(msg) {
-			if (msg!=null) {
-				var i2 = "countWine" + id;
-				var i3 = document.getElementById(i2).value;
-				alert(i3 + "Stück ihren Weinkeller hinzugfügt ");
+			
+			alert(unescape(msg));
 
-			}else{
-				
-				alert("Bitte zuerst einloggen ");
 
-			}
+		}
+
+	});
+	
+}
+function addMyWine(id){
+	
+	var method = "add";
+	var i2 = "countWine" + id;
+	var i3 = document.getElementById(i2).value;
+
+	$.ajax({
+		type : 'post',
+		url : 'includes/myWine.php',
+		data : {
+			method:method, number:i3, wineID:id
+		},
+
+		success : function(msg) {
+			
+			searchMyWine();
+			alert(unescape(msg));
+
+
+		}
+
+	});
+	
+}
+function removeWine(id){
+	
+	var method = "remove";
+	var i2 = "countWine" + id;
+	var i3 = document.getElementById(i2).value;
+
+	$.ajax({
+		type : 'post',
+		url : 'includes/myWine.php',
+		data : {
+			method:method, number:i3, wineID:id
+		},
+
+		success : function(msg) {
+			searchMyWine();
+			alert(unescape(msg));
+
 
 		}
 
@@ -63,12 +104,13 @@ function searchWine() {
 	var searchDish = document.getElementById("searchTermValue").value;
 	var searchCountry = getCountry();
 	var searchWineType = getWineType(); 
-		
+	var method = "select";
+	
 	if(searchDish == ''){
 	$.ajax({
 		type : 'POST',
-		url : 'includes/getWine.php',
-		data : {searchCountry:searchCountry, searchWineType:searchWineType},
+		url : 'includes/wine.php',
+		data : {method:method, searchCountry:searchCountry, searchWineType:searchWineType},
 		success : function(result) {
 			
 			document.getElementById("resultList").innerHTML = result;
@@ -81,8 +123,8 @@ function searchWine() {
 	}else{
 		$.ajax({
 			type : 'POST',
-			url : 'includes/getWine.php',
-			data : {searchDish:searchDish, searchCountry:searchCountry, searchWineType:searchWineType},
+			url : 'includes/wine.php',
+			data : {method:method, searchDish:searchDish, searchCountry:searchCountry, searchWineType:searchWineType},
 			success : function(result) {
 				
 				document.getElementById("resultList").innerHTML = result;
@@ -95,6 +137,7 @@ function searchWine() {
 	}
 }
 
+//TODO: Implementation of "wait-popup"
 function popup_wait(action){
 	
 	
@@ -113,12 +156,14 @@ function searchMyWine() {
 	var searchDish = document.getElementById("searchTermValue").value;
 	var searchCountry = getCountry();
 	var searchWineType = getWineType(); 
+	var method = "select";
+
 	
 	if(searchDish == ''){
 	$.ajax({
 		type : 'POST',
-		url : 'includes/getWine.php',
-		data : {searchCountry:searchCountry, searchWineType:searchWineType},
+		url : 'includes/myWine.php',
+		data : {method:method, searchCountry:searchCountry, searchWineType:searchWineType},
 		success : function(result) {
 			
 			document.getElementById("resultList").innerHTML = result;
@@ -131,8 +176,8 @@ function searchMyWine() {
 	}else{
 		$.ajax({
 			type : 'POST',
-			url : 'includes/getWine.php',
-			data : {searchDish:searchDish, searchCountry:searchCountry, searchWineType:searchWineType},
+			url : 'includes/myWine.php',
+			data : {method:method, searchDish:searchDish, searchCountry:searchCountry, searchWineType:searchWineType},
 			success : function(result) {
 				
 				document.getElementById("resultList").innerHTML = result;
@@ -145,19 +190,6 @@ function searchMyWine() {
 	}
 }
 
-//function getSearchDish(){
-//	
-//	var dish;
-//	$("input:checkbox[name=country]:checked").each(function() {
-//		country.push($(this).val());
-//	});
-//	var searchCountry = JSON.stringify(country);
-
-//	var searchCountry = {
-//		searchCountry : searchCountry
-//	};
-	
-//	return searchCountry;
 
 function getCountry(){
 	
@@ -167,10 +199,6 @@ function getCountry(){
 	});
 	var searchCountry = JSON.stringify(country);
 
-//	var searchCountry = {
-//		searchCountry : searchCountry
-//	};
-	
 	return searchCountry;
 	
 }
@@ -181,10 +209,6 @@ function getWineType(){
 		vineType.push($(this).val());
 	});
 	var searchWineType = JSON.stringify(vineType);
-
-//	var searchWineType = {
-//		searchWineType : searchWineType
-//	};
 	
 	return searchWineType;
 	

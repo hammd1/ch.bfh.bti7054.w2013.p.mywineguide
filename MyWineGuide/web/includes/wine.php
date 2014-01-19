@@ -18,7 +18,7 @@ if (isset($_POST['searchCountry'])) {
 	
 	if (!empty($searchCountry)) {
 		
-		$searchCountryResult = $wineDAO->getAllElements(Constants::COUNTRY_SEARCH, $searchCountry);
+		$searchCountryResult = $wineDAO->getAllElements(Constants::COUNTRY_SEARCH, $searchCountry, NULL);
 	}
 }
 
@@ -29,18 +29,18 @@ if (isset($_POST['searchWineType'])) {
 	
 	if (!empty($searchWineType)) {
 
-		$searchWineTypeResult = $wineDAO->getAllElements(Constants::WINETYPE_SEARCH, $searchWineType);
+		$searchWineTypeResult = $wineDAO->getAllElements(Constants::WINETYPE_SEARCH, $searchWineType, NULL);
 		
 	}
 }
-//select from table if winetype is set
+//select from table if dish is set
 if (isset($_POST['searchDish'])) {
 	
 	$searchDish = $_POST ['searchDish'];
 	
 	if (!empty($searchDish)) {
 	
-		$searchDishResult = $wineDAO->getAllElements(Constants::DISH_SEARCH, $searchDish);		
+		$searchDishResult = $wineDAO->getAllElements(Constants::DISH_SEARCH, $searchDish, NULL);		
 	
 	}
 	
@@ -111,7 +111,7 @@ if(isset($searchDishResult)){
 if (is_null($searchResult)) {
 
 		
-	$searchResult = $wineDAO->getAllElements(Constants::TOP3_SEARCH, NULL);		
+	$searchResult = $wineDAO->getAllElements(Constants::TOP3_SEARCH, NULL, NULL);		
 
 }
 

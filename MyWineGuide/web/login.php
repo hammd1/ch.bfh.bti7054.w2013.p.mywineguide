@@ -1,10 +1,10 @@
 <?php
 include_once 'includes/db_connect.php';
 include_once 'includes/functions.php';
-sec_session_start ();
+ sec_session_start ();
 
 if (login_check ( $mysqli ) == true) {
-	$logged = '';
+	$logged = '';	
 } else {
 	$logged = 'nicht';
 }
@@ -28,7 +28,7 @@ if (login_check ( $mysqli ) == true) {
 	<?php include 'includes/mainHeader.php';?>		
 	<?php include 'includes/topNavigation.php';?>		
 
-       <p>Sie sind momentan <?php echo $logged ?> eingelogt.</p>
+       <p>Sie sind momentan <?php echo $logged ?> eingeloggt.</p>
        
         <?php
 			if (isset ( $_GET ['error'] )) {

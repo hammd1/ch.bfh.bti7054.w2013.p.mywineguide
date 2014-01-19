@@ -2,14 +2,21 @@
 include_once 'includes/functions.php';
 include_once 'includes/db_connect.php';
 ?>
-<?php initCookies();?>
 
 <script type="text/javascript" src="js/functions.js"></script>
 <script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js" type="text/javascript"></script>
  
 <?php 
-$language = $_COOKIE["language"];
-
+if(isset($_COOKIE["language"])){
+	$language = $_COOKIE["language"];
+}else{
+	$language ='de';
+}
+if(isset($_COOKIE["login"])){
+	$login = $_COOKIE["login"];
+}else{
+	$login = FALSE;
+}
 
 $menuItem [0] ["de"] = "Startseite";
 $menuItem [1] ["de"] = "Impressum";
@@ -31,7 +38,7 @@ $menuItem [4] ["en"] = "Logout";
 			<li <?=echoActiveSiteNavigation("index")?>><a href="index.php"><?php echo $menuItem[0][$language];?></a></li>
 			<li <?=echoActiveSiteNavigation("about")?>><a href="about.php"><?php echo $menuItem[1][$language];?></a></li>
 			<li <?=echoActiveSiteNavigation("contact")?>><a href="contact.php"><?php echo $menuItem[2][$language];?></a></li>
-			<li <?=echoActiveSiteNavigation("login")?>><a href="login.php"><?php if (login_check($mysqli) == true){echo $menuItem[4][$language];}else{echo $menuItem[3][$language];}?></a></li>
+			<li <?=echoActiveSiteNavigation("login")?>><a href="login.php"><?php if ($login){echo $menuItem[4][$language];}else{echo $menuItem[3][$language];}?></a></li>
 			<li><a href="javascript:void(0)" onclick="languageSwitch('de')"
 				style="padding: 2px">DE</a></li>
 			<li>/</li>

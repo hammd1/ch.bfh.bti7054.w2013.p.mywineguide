@@ -3,7 +3,6 @@ FetureList myWineGuide:
 Muss:
 -User anmelden /verwalten
 -Weinkeller/Wein erfassen
--Wein beurteilen
 -Wein zu Essen - Suche (frei / nur myWineDB)
 -Essen zu Wein -Suche	(frei)
 
@@ -12,6 +11,7 @@ Muss:
 Soll:
 -Wein zu Essen - Bewertung erfassen
 -Werbung anzeigen
+-Wein beurteilen
 -Ein -/ Auschecken von Wein in myWineDB
 
 

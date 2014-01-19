@@ -1,3 +1,8 @@
 <?php
-include_once 'psl-config.php';   // As functions.php is not included
+/**
+ * Conncts to secure_login DB
+ * 
+ * */
+include_once 'psl-config.php';
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);
+?>

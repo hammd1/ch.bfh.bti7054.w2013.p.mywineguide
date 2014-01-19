@@ -3,9 +3,22 @@ include_once 'psl-config.php';
 include_once 'baseDAO.php';
 include_once 'constants.php';
 
-
+/**
+ * DAO-Class to acces wineDB without defined userID (wineSearch)
+ *
+ * */
 class WineDAO implements BaseDAO{
 	
+	/**
+	 * function to get wine from database
+	 *
+	 * @param $argument defines the search columns
+	 * @param $values array with all search values
+	 *
+	 * @param $userID is NULL
+	 *
+	 * @return array with all found elements
+	 */
 	public function getAllElements($argument, $values, $userID){
 
 		$execResult = array();
@@ -13,6 +26,7 @@ class WineDAO implements BaseDAO{
 		
 		switch ($argument){
 			
+			//if search by country
 			case Constants::COUNTRY_SEARCH: 
 			
 				$execStmt = "SELECT * FROM wineguide.wine WHERE country = '" . $values [0] . "'";
@@ -24,6 +38,7 @@ class WineDAO implements BaseDAO{
 				}
 				break;
 				
+			//if search by winetype
 			case Constants::WINETYPE_SEARCH: 
 									
 				$execStmt = "SELECT * FROM wineguide.wine WHERE winetype = '" . $values [0] . "'";
@@ -35,6 +50,7 @@ class WineDAO implements BaseDAO{
 												
 				break;
 			
+			//if search by dish
 			case Constants::DISH_SEARCH:
 				
 				$execStmt = "SELECT w.id, w.name, w.winetype, w.country, w.region, 
@@ -57,8 +73,11 @@ class WineDAO implements BaseDAO{
 		// db connect;
 		$mysqli = new mysqli ( HOST, USER, PASSWORD, 'wineguide' );
 				
+		
+		//ececute statement
 		$res = $mysqli->query ($execStmt);
 		
+		//fetching rows
 		for($row_no = 0; $row_no < $res->num_rows; $row_no ++) {
 			$res->data_seek ( $row_no );
 			$row = $res->fetch_assoc ();

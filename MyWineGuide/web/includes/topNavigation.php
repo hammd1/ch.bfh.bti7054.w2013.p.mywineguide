@@ -17,11 +17,11 @@ $menuItem [2] ["en"] = "My Winecellar";
 
 <nav class="topNavigation">
 	<ul>
-		<li <?=echoActiveSiteNavigation("wineSearch")?>><a
-			href="wineSearch.php"><?php echo $menuItem[0][$language];?></a></li>
-		<li <?=echoActiveSiteNavigation("foodSearch")?>><a href="foodSearch.php">
+		<li <?=echoActiveSiteNavigation("index.php?page=wineSearch")?>><a
+			href="index.php?page=wineSearch"><?php echo $menuItem[0][$language];?></a></li>
+		<li <?=echoActiveSiteNavigation("index.php?page=dishSearch")?>><a href="index.php?page=dishSearch">
 				<?php echo $menuItem[1][$language];?></a></li>
-		<li <?=echoActiveSiteNavigation("myWineCellar")?>><a
-			href="myWineCellar.php"><?php echo $menuItem[2][$language];?></a></li>
+		<li <?=echoActiveSiteNavigation("index.php?page=myWineCellar")?>><a
+			href="index.php?page=myWineCellar"><?php echo $menuItem[2][$language];?></a></li>
 	</ul>
 </nav>

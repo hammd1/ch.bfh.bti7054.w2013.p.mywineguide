@@ -35,10 +35,10 @@ $menuItem [4] ["en"] = "Logout";
 	<a href="index.php"><img src="images/logo.jpg"></a>
 	<nav>
 		<ul>
-			<li <?=echoActiveSiteNavigation("index")?>><a href="index.php"><?php echo $menuItem[0][$language];?></a></li>
-			<li <?=echoActiveSiteNavigation("about")?>><a href="about.php"><?php echo $menuItem[1][$language];?></a></li>
-			<li <?=echoActiveSiteNavigation("contact")?>><a href="contact.php"><?php echo $menuItem[2][$language];?></a></li>
-			<li <?=echoActiveSiteNavigation("login")?>><a href="login.php"><?php if ($login){echo $menuItem[4][$language];}else{echo $menuItem[3][$language];}?></a></li>
+			<li <?=echoActiveSiteNavigation("index.php")?>><a href="index.php"><?php echo $menuItem[0][$language];?></a></li>
+			<li <?=echoActiveSiteNavigation("index.php?page=about")?>><a href="index.php?page=about"><?php echo $menuItem[1][$language];?></a></li>
+			<li <?=echoActiveSiteNavigation("index.php?page=contact")?>><a href="index.php?page=contact"><?php echo $menuItem[2][$language];?></a></li>
+			<li <?=echoActiveSiteNavigation("index.php?page=login")?>><a href="index.php?page=login"><?php if ($login){echo $menuItem[4][$language];}else{echo $menuItem[3][$language];}?></a></li>
 			<li><a href="javascript:void(0)" onclick="languageSwitch('de')"
 				style="padding: 2px">DE</a></li>
 			<li>/</li>

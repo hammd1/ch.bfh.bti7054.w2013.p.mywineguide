@@ -108,7 +108,7 @@ if(isset($searchDishResult)){
 }
 
 
-if (is_null($searchResult)) {
+if (is_null($searchResult) && is_null($searchCountry) && is_null($searchWineType) && is_null($searchDish)) {
 
 		
 	$searchResult = $wineDAO->getAllElements(Constants::TOP3_SEARCH, NULL, NULL);		

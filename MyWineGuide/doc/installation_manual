@@ -1,0 +1,14 @@
+
+1. Database-Setup mit SQL-Script "databaseSetup.sql";
+	Dabei wird der User user2'@'localhost erstellt und ihm für die Tabelle secure_login und wineguide Lese, bzw. Schreibrechte vergeben.
+	
+	Zussätzlich wird der folgende Testuser erstellt:
+	-Username: test_user
+	-Email:	test1@example.com
+	-Passwort: habaK12
+	
+		
+2. Ant copyFolder.xml verwenden, um die Files in den htdocs-folder zu kopieren
+	-Bitte beachten, dass eventuell der Pfad im Ant angepasst werden muss.
+	
+3. http://localhost/MyWineGuide/web/index.php aufrufen und los gehts.

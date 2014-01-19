@@ -80,6 +80,6 @@ if (isset($_POST['username'], $_POST['email'], $_POST['p'])) {
         }
         
         
-        header('Location: ./register_success.php');
+        header('Location: ./index.php?page=login');
     }
 }

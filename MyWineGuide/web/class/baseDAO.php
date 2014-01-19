@@ -1,4 +1,8 @@
 <?php
+/**
+ * Generic DAO-interface to implement by DAO-classes
+ *
+ * */
 interface BaseDAO{
 	
 	public function getAllElements($arguments, $value, $userID);

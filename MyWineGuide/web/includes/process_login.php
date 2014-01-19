@@ -11,7 +11,7 @@ if (isset($_POST['email'], $_POST['p'])) {
 
 	if (login($email, $password, $mysqli) == true) {
 		// Login success
-		header('Location: ../myWineCellar.php');
+		header('Location: ../index.php?page=myWineCellar');
 		setcookie("login", TRUE, time()+600, '/', NULL);
 		
 	} else {

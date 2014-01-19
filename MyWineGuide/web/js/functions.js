@@ -1,4 +1,9 @@
-
+/*
+ * function switches the language
+ * 
+ * @param the language to set
+ * 
+ */
 function languageSwitch(language) {
 
 	$.ajax({
@@ -19,6 +24,12 @@ function languageSwitch(language) {
 	});
 
 }
+/*
+ * function shows the selected optionpanel
+ * 
+ * @param the buttonID to the object
+ * 
+ * */
 function showSelectionOption(buttonID) {
 
 	var temp = document.getElementsByName(buttonID)[0];
@@ -28,6 +39,14 @@ function showSelectionOption(buttonID) {
 		temp.style.display = 'block';
 	}
 }
+
+/*
+ * function makes ajax-call to add wine into the wineguide-DB
+ * triggered from wineSearch.php
+ * 
+ * @param the id of the wine
+ * 
+ * */
 function addWine(id){
 	
 	var method = "add";
@@ -51,6 +70,13 @@ function addWine(id){
 	});
 	
 }
+/*
+ * function makes ajax-call to add wine into the wineguide-DB
+ * triggered from myWineCellar.php
+ * 
+ * @param the id of the wine
+ * 
+ * */
 function addMyWine(id){
 	
 	var method = "add";
@@ -75,6 +101,13 @@ function addMyWine(id){
 	});
 	
 }
+/*
+ * function makes ajax-call to remove wine from the wineguide-DB
+ * triggered from myWineCellar.php
+ * 
+ * @param the id of the wine
+ * 
+ * */
 function removeWine(id){
 	
 	var method = "remove";
@@ -98,7 +131,12 @@ function removeWine(id){
 	});
 	
 }
-
+/*
+ * function  makes ajax-call to search wine from DB
+ * 
+ * "@return" fills innerElement from resultList in wineSearch
+ * 
+ * */
 function searchWine() {
 
 	var searchDish = document.getElementById("searchTermValue").value;
@@ -151,6 +189,12 @@ function popup_wait(action){
 	alert(message)
 	
 }
+/*
+ * function  makes ajax-call to search wine from DB where user is logged in
+ * 
+ * "@return" fills innerElement from resultList in myWineCellar
+ * 
+ * */
 function searchMyWine() {
 
 	var searchDish = document.getElementById("searchTermValue").value;
@@ -190,7 +234,12 @@ function searchMyWine() {
 	}
 }
 
-
+/*
+ * function creates jason-object (array) from all checked checkboxes in category country
+ * 
+ * "@return" the creates jason object
+ * 
+ * */
 function getCountry(){
 	
 	var country = new Array();
@@ -202,6 +251,12 @@ function getCountry(){
 	return searchCountry;
 	
 }
+/*
+ * function creates jason-object (array) from all checked checkboxes in category wineType
+ * 
+ * "@return" the creates jason object
+ * 
+ * */
 function getWineType(){
 	
 	var vineType = new Array();
@@ -213,19 +268,28 @@ function getWineType(){
 	return searchWineType;
 	
 }
+
+/*
+ * if wineSearch is loaded first, get initial wine (top 3 rated)
+ * 
+ * */
 function searchWineFirstLoad(){
 
 	if(document.getElementById("resultList").innerHTML == ""){
 		searchWine();
 	}
 }
+/*
+ * if myWineCellar is loaded first, get initial wine (top 3 oldest)
+ * 
+ * */
 function searchMyWineFirstLoad(){
 
 	if(document.getElementById("resultList").innerHTML == ""){
 		searchMyWine();
 	}
 }
-
+//TODO: implement keyup function
 function dishSuggestion(){
 	$('#searchTermValue').keyup(function() {
 		alert( "Handler for .keyup() called." );

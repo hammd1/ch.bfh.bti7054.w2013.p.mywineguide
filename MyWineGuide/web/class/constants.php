@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * CLass constants contains all constants used by mywineguide
+ *
+ * */
 final class Constants {
 
    private function __construct() {}

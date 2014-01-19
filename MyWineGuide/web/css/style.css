@@ -415,6 +415,27 @@ a:hover,a:active {
 }
 
 
+#registerForm form ul{
+	
+	float: left;
+	list-style: none;
+	
+}
+
+#registerForm form{
+	
+	clear: both;
+	display: block;
+	
+}
+
+#register p{
+	
+	clear: both;
+	display: block;	
+	margin-left: 5%;
+}
+
 
 /* highlight results */
 .ui-autocomplete span.hl_results {
@@ -422,9 +443,9 @@ a:hover,a:active {
 }
  
 /* ===========================
-   ====== Media Queries ====== 
+   ====== Media Queries DON'T WORK ANYMORE ====== 
    =========================== */
-@media only screen and (min-width : 150px) and (max-width : 780px) {
+/* @media only screen and (min-width : 150px) and (max-width : 780px) {
 	.body {
 		clear: both;
 		margin: 0 auto;
@@ -548,4 +569,4 @@ a:hover,a:active {
 		width: 86%;
 		margin: 2% auto;
 	}
-}
+ */}

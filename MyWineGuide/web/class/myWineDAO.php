@@ -3,11 +3,24 @@ include_once 'psl-config.php';
 include_once 'baseDAO.php';
 include_once 'constants.php';
 
-
+/**  
+ * DAO-Class to acces wineDB with defined userID (myWineCellar)
+ * 
+ * */
 class MyWineDAO implements BaseDAO{
 	
 	private $userID;
 	
+	
+	/**
+	 * function to get wine from users winecellar
+	 *
+	 * @param $userID the users id
+	 * @param $argument defines the search columns
+	 * @param $values array with all search values
+	 *
+	 * @return array with all found elements
+	 */
 	public function getAllElements($argument, $values, $userID){
 
 		$execResult = array();
@@ -16,6 +29,7 @@ class MyWineDAO implements BaseDAO{
 				
 		switch ($argument){
 			
+			//if search by country
 			case Constants::COUNTRY_SEARCH: 
 			
 				$execStmt = "SELECT w.id, w.name, w.winetype, w.country, w.region, 
@@ -30,7 +44,8 @@ class MyWineDAO implements BaseDAO{
 			
 				}
 				break;
-				
+			
+			//if search by winetype
 			case Constants::WINETYPE_SEARCH: 
 									
 				$execStmt = "SELECT w.id, w.name, w.winetype, w.country, w.region, 
@@ -46,6 +61,7 @@ class MyWineDAO implements BaseDAO{
 												
 				break;
 			
+			//if search by dish
 			case Constants::DISH_SEARCH:
 				
 				$execStmt = "SELECT w.id, w.name, w.winetype, w.country, w.region, 
@@ -67,9 +83,13 @@ class MyWineDAO implements BaseDAO{
 		
 		// db connect;
 		$mysqli = new mysqli ( HOST, USER, PASSWORD, 'wineguide' );
+		
 		$execStmt = $execStmt . ")";
+		
+		//ececute statement
 		$res = $mysqli->query ($execStmt);
 		
+		//fetching rows
 		if($res){
 			for($row_no = 0; $row_no < $res->num_rows; $row_no ++) {
 				$res->data_seek ( $row_no );
@@ -93,6 +113,15 @@ class MyWineDAO implements BaseDAO{
 	public function deleteElementByID($execStmt){}
 	
 	
+	/**
+	 * function to add a wine to a users winecellar
+	 * 
+	 * @param $userID the users id
+	 * @param $wineID the wine id
+	 * @param $number the number of wines to remove;
+	 * 
+	 * @return (echo) string with confirmation if insert/update was successfull or not
+	 */
 	public function insertElement($userID, $wineID, $number){
 			
 		// db connect;
@@ -121,7 +150,16 @@ class MyWineDAO implements BaseDAO{
 				
 		$mysqli->close();
 	}
-			
+
+	/**
+	 * function to remove wine from users winecellar
+	 * 
+	 * @param $userID the users id
+	 * @param $wineID the wine id
+	 * @param $number the number of wines to remove;
+	 * 
+	 * @return (echo) string with confirmation if remove was successfull or not
+	 */
 	public function removeWine($userID, $wineID, $number){
 		
 		// db connect;

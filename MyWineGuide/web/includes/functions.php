@@ -1,15 +1,10 @@
 <?php
-function initCookies(){
-
-	if( ! isset( $_COOKIE["language"])){
-
-		setcookie("language", "de", time()+600, '/', NULL);		
-	}
-}
-initCookies();
-
 include_once 'psl-config.php';
 
+/**
+ * starting a new session in a secure way
+ *
+ * */
 function sec_session_start() {
 	$session_name = 'sec_session_id'; // Set a custom session name
 	$secure = SECURE;
@@ -30,6 +25,16 @@ function sec_session_start() {
 	session_regenerate_id (); // regenerated the session, delete the old one.
 }
 
+/**
+ * login function
+ * 
+ * @param $email the users email
+ * @param $password the users password
+ * @param $mysqli the db-connection
+ * 
+ * 	@return true if logins successfull, else return false
+ *
+ * */
 function login($email, $password, $mysqli) {
 	// Using prepared statements means that SQL injection is not possible.
 	if ($stmt = $mysqli->prepare ( "SELECT id, username, password, salt
@@ -86,6 +91,15 @@ function login($email, $password, $mysqli) {
 	}
 }
 
+/**
+ * check if someone tried to hack a users accout with a brute force attack (nr login attempts)
+ *
+ * @param $user_id the users id
+ * @param $mysqli the db-connection
+ *
+ * @return true if more than 5 failed logins, else return false
+ *
+ * */
 function checkbrute($user_id, $mysqli) {
 	// Get timestamp of current time
 	$now = time ();
@@ -112,6 +126,14 @@ function checkbrute($user_id, $mysqli) {
 	}
 }
 
+/**
+ * check user is logged in (accessin session variables)
+ * 
+ * @param $mysqli the db-connection
+ *
+ * @return true if logged in, else return false
+ *
+ * */
 function login_check($mysqli) {
 	// Check if all session variables are set
 	if (isset($_SESSION['user_id'],
@@ -160,6 +182,14 @@ function login_check($mysqli) {
 	}
 }
 
+/**
+ * replace /remove  all special character from string
+ *
+ * @param $url the url string to be cleaned
+ *
+ * @return the "cleaned" url-string
+ *
+ * */
 function esc_url($url) {
 
 	if ('' == $url) {
@@ -190,17 +220,19 @@ function esc_url($url) {
 		return $url;
 	}
 }
+/**
+ * checks which site is current active (for highlighting purpose)
+ *
+ * @param $url the url string to be checked
+ *
+ * @return (echo ) the active site
+ *
+ * */
 function echoActiveSiteNavigation($requestUri)
 {
-	$current_file_name = basename($_SERVER['REQUEST_URI'], ".php");
+	$current_file_name = basename($_SERVER['REQUEST_URI']);
 
 	if ($current_file_name == $requestUri)
 		echo 'class="active"';
 }
-
-function getCurrentPageURL() {
-// 	return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-	return "index.php";
-}
-
 ?>

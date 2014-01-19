@@ -42,6 +42,11 @@ if (login_check ($mysqli) == true) {
 	echo 'Um Weine ihrem Weinkeller hinzuzuf%FCgen, m%FCssen Sie eingeloggt sein';
 }
 
+/**
+ * searches the wine a user has in his "winecellar"
+ * echo the found wine
+ * 
+ * */
 function getWine(){
 	
 	$searchResult = NULL;
@@ -189,6 +194,11 @@ function getWine(){
 	
 	echo "</tbody>";
 }
+/**
+ * adds a wine to the users winecellar
+ *
+ * */
+
 function addWine(){
 	
 	$number = intval($_POST['number']);
@@ -201,6 +211,11 @@ function addWine(){
 	$searchResult = $myWineDAO->insertElement($userID, $wineID, $number);
 		
 }
+
+/**
+ * removes wine from the users winecellar
+ *
+ * */
 function removeWine(){
 
 	$number = intval($_POST['number']);

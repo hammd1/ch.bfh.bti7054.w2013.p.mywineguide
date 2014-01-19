@@ -3,7 +3,7 @@
 <project basedir="." name="MyWineGuide Copy">	
 	<target name="copyToHtdocs">		
 		<copy todir="D:\xampp\htdocs\mywineguide\web">	
-		       <fileset dir="C:\develop\git\ch.bfh.bti7054.w2013.p.mywineguide\MyWineGuide\web"/> 		       	
+		       <fileset dir="C:\Users\dimitri.haemmerli\git\ch.bfh.bti7054.w2013.p.mywineguide\MyWineGuide\web"/> 		       	
 		 </copy>
 	</target>
 </project>
